@@ -1,0 +1,11 @@
+#carousel1 .carousel-caption
+{
+    top:50%;
+    position: fixed;
+    transform: translateY(-50%);
+}
+.messageText
+{
+    color:rgb(255, 40, 40);
+    font-size:15px;
+}

@@ -1,0 +1,24 @@
+
+<div class="container-fluid nav-Image"></div>
+  <nav class="navbar navbar-expand-sm sticky-top navbar-light ">
+    <div class="container-fluid">
+      <a routerLink="/recipes" class="text-danger navbar-brand">MHLONGO RECIPES</a>
+      <button *ngIf="isAuth" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span></button>
+
+      <!-- Navbar links -->
+     <div *ngIf="isAuth" class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav"> 
+          <li class="nav-item">
+          <a class="text-danger nav-link " routerLink="/recipes">Recipes</a></li>
+          <li class="nav-item">
+          <a class="text-danger nav-link" routerLink="/shopping-list" >Add Recipe</a></li>
+        </ul>
+      
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+          <a class="text-danger btn btn-outline-danger"  style="cursor: pointer" (click)=" onLogout()" >Logout</a></li>
+        </ul>
+      </div>
+    </div>  
+  </nav>

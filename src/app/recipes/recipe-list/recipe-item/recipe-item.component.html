@@ -1,0 +1,41 @@
+
+
+<div class="row justify-content-center mt-2">
+    <div class="col-sm-8">
+       <form class="d-flex ">
+            <input class="form-control search me-2" name="search" aria-label="Search"
+            type="search" [(ngModel)]="searchName" placeholder="Search recipe by name"/>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <hr class="HLine text-danger">
+    </div> 
+</div>
+
+<div class="row pt-2 addScroll"> 
+    <div *ngFor="let res of recipe | recipefilter:searchName" class="col-lg-3 cardCol mt-3 col-md-4 col-sm-6 col-xs-6 my-2" >
+        <a routerLink="view-recipe/{{res.Id}}" (click)="ItemDetails(res.Id)" class="items rounded" >
+            <div class="row m-3">
+                <img src="{{res.image}}" class="card-img-top img-fluid" style="width:100%;height:150px;" alt="no picture">
+            </div>
+            <div class="row m-3 justify-content-center">
+                <div class="col-xs-8">
+                    <div class="row">
+                        <h3 class="">{{res.name}}</h3>
+                    </div>
+                    <div class="row">
+                        <p>{{res.shortDescription}}</p>
+                    </div>
+                    <div class="row ">
+                        <p><small class="rating">&#9733; &#9733; &#9733; &#9733; &#9734;</small></p>
+                    </div>
+                </div>
+            </div>
+         </a> 
+     </div>
+</div>
+
+

@@ -1,0 +1,37 @@
+<div id="carousel1" class="carousel" data-ride="carousel">
+  <div class="carousel-inner">
+     <div class="carousel-item active">
+      <img class="img-fluid img-responsive " style="max-height:500px;"   src="https://image.freepik.com/free-photo/chef-presenting-something-white-background_1368-2825.jpg" alt="">
+        <div class="carousel-caption">
+          <div class="row justify-content-center pt-5">
+            <div class="col-md-6 col-md-offset">
+              <p class="messageText" *ngIf="error && timeInterV">{{error}}</p>
+                <div class="text-center" *ngIf="isLoading">
+                    <app-spinner></app-spinner>
+                </div>
+
+                <form #AuthForm="ngForm" (ngSubmit)="onSubmit(AuthForm)" *ngIf="!isLoading">
+                  <h3 class="bg-danger rounded text-light p-4">{{ isLoginMode? "Login " : "Sign Up"}}</h3>
+                  <div class="form-group pb-2">
+                    <input type="email" class="form-control" placeholder="Enter Email" ngModel name="email" id="in1" email required>
+                  </div>
+    
+                  <div class="form-group pb-2">
+                    <input type="password" class="form-control"  placeholder="Enter Password" ngModel name="password" id="in2" minlength="6"  required>
+                  </div>
+  
+                  <div class="form-group ">
+                    <button type="submit" class="btn btn-danger" [disabled]="!AuthForm.valid" type='submit'>{{ isLoginMode? "Login" : "Sign Up"}}</button> |
+                    <button type="submit" class="btn btn-danger" (click)="onSwitch()" type='button'>Switch to {{ isLoginMode? "Sign Up" : "Login"}}</button>
+                  </div>
+                </form>  
+                  
+             </div>
+          </div>
+        </div>
+     </div>           
+   </div>
+</div>  
+
+
+

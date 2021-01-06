@@ -1,0 +1,21 @@
+.card
+{
+    border-radius: 15px;
+    border:none;
+    color:rgb(69, 104, 219);
+}
+
+.rating
+{
+    color:rgb(255, 217, 2);
+    font-size:20px;
+}
+.row:hover{
+    cursor: pointer;
+}
+.recipeAdd
+{
+    color:green;
+    font-size:20px;
+    font-weight:2px;
+}

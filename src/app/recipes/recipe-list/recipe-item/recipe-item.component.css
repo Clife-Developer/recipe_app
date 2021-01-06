@@ -1,0 +1,35 @@
+.items 
+{
+    text-decoration: none;
+    padding:3px;
+    margin:5px;
+}
+
+.items:hover{
+    cursor: pointer;
+}
+
+.rating
+{
+    color:rgb(245, 202, 8)!important;
+    font-size:15px
+    
+}
+
+.cardCol:hover
+{
+  opacity:0.8;
+  box-shadow: 5px 5px 10px 5px rgba(97, 96, 96, 0.5);
+  border-radius:5px;
+  font-size:15px;
+}
+
+.HLine
+{
+    font-weight:7px;
+}
+.search{
+    box-shadow:0px 10px 10px rgba(163, 35, 26, 0.541);
+    padding-top:5px;
+    padding-bottom:5px;
+}

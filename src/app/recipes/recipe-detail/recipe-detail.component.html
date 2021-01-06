@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row pt-5" *ngIf="!isEdit">
+        <button routerLink="/recipes" class=" my-2 px-4 btn btn-outline-success">Back </button>
+        <div class="card" style="width:fit-content;height:fit-content">
+            <div class="row">
+              <div class="col-lg-6">
+                <img src="{{Details.image}}" class="img-fluid rounded"  alt="no image">
+              </div>
+              <div class="col-lg-6">
+                <div class="card-body m-0 pt-0">
+                  <h3 class="card-title">{{Details.name}}</h3>
+                  <p class="card-text">{{Details.shortDescription}}</p>
+                  <p class="card-text">{{Details.description}}</p>
+                  <p><small class="rating">&#9733; &#9733; &#9733; &#9733; &#9734;</small></p>
+                  <button (click)="EditRecipe()" class="btn btn-outline-primary">Edit Recipe</button>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  
+    <!--Edit recipe-->
+    <div class="row justify-content-center" *ngIf="isEdit">
+        <div class="col-xs-12 col-sm-10  p-3">
+            <form #recipeForm="ngForm" (ngSubmit)="onSubmit(recipeForm)">
+                <div class="row">
+                    <div class="col-sm-4 form-group">
+                       <label for="name">Name</label>
+                    <input type="text" id="name" class="form-control" name="name" ngModel [(ngModel)]="Details.name" required>
+                    </div>
+                    <div class="col-sm-8 form-group">
+                        <label for="image">Image Link</label>
+                        <input type="string" id="image" class="form-control" name="image" ngModel [(ngModel)]="Details.image" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+                        <label for="shortDescription">Publisher Name</label>
+                        <input id="shortDescription" type="text" class="form-control" name="shortDescription" ngModel [(ngModel)]="Details.shortDescription" required>
+                    </div>
+                </div>
+                 <div class="row">
+                    <div class="col-sm-12 form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" cols="10" rows="10" class="form-control" name="description" ngModel [(ngModel)]="Details.description" required></textarea>
+                    </div>
+                 </div>
+                 <div class="row">
+                    <div class="col-sm-12">
+                        <button class="btn mr-1 btn-success" (click)="onClick(recipeForm)"  [disabled]="!recipeForm.valid" type="submit">Save</button>
+                        <button routerLink="/recipes" class=" my-2 px-4 btn btn-success">Cancel</button>
+                    </div>
+                </div>
+            </form>
+           <span><p *ngIf="isSubmitted" class="recipeAdd">Recipe Updated Successfully!</p></span>
+        </div>
+    </div>
+</div>
+
+
